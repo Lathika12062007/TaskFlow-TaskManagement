@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | TaskFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>TaskFlow</h2>
+
+    <div>
+        <span id="userName"></span>
+        <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+</header>
+
+<main class="dashboard">
+
+    <h1>My Dashboard</h1>
+    <p>Manage your tasks and stay productive.</p>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+    </div>
+
+    <div class="task-form card">
+        <h2 id="formTitle">Add New Task</h2>
+
+        <form id="taskForm">
+            <input type="hidden" id="taskId">
+
+            <input type="text" id="title" placeholder="Task Title" required>
+
+            <textarea id="description" placeholder="Task Description"></textarea>
+
+            <div class="form-row">
+                <select id="status">
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                </select>
+
+                <select id="priority">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <input type="date" id="due_date">
+
+            <button type="submit" class="btn">Save Task</button>
+
+            <button type="button" id="cancelEdit" class="btn secondary hidden">
+                Cancel
+            </button>
+        </form>
+    </div>
+
+    <div class="task-section">
+        <h2>My Tasks</h2>
+
+        <input type="text" id="search" placeholder="Search tasks...">
+
+        <div id="taskList" class="task-grid"></div>
+    </div>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
